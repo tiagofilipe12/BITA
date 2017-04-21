@@ -4,7 +4,7 @@ Blast IT All
 
 ## Description
 
-bita.py allows to blast mixed queries of proteins (tblastn) and nucleotides (blastn) against a custom protein database or databases.
+bita.py allows to blast mixed queries of proteins (tblastn) and nucleotides (blastn) against a custom nucleotide database or databases.
 
 ## Usage
 
