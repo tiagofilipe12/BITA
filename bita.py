@@ -22,14 +22,15 @@ def blast(input_query, dbs, proc):
                         proc,
                         "-out",
                         output_name]
-        print "running cmd: {}\n".format("_".join(["tblastn"]+blast_command))
+        print "running cmd: {}\n".format(" ".join(["tblastn"]+blast_command))
         p = Popen(["tblastn"]+blast_command, stdout=PIPE, stderr=PIPE)
         p.wait()
         stdout, stderr = p.communicate()
         print stderr
         if stderr:
             print "Attempting to perform blastn instead"
-            print "running cmd: {}\n".format("_".join(["blastn"] + blast_command))
+            print "running cmd: {}\n".format(" ".join(["blastn"] +
+                                                      blast_command))
             p = Popen(["blastn"] + blast_command, stdout=PIPE, stderr=PIPE)
             p.wait()
             stdout, stderr = p.communicate()
