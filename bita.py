@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 from subprocess import Popen, PIPE
 import os
 
-def blast(input_query, dbs, proc):
+def blast(input_query, dbs, proc, evalue, outformat):
     ##output_list = []
     for db in dbs:
         stdout, stderr = "",""
@@ -15,9 +15,9 @@ def blast(input_query, dbs, proc):
                         "-db",
                         db,
                         "-outfmt",
-                        "6",
+                        outformat,
                         "-evalue",
-                        "0.000001",
+                        evalue,
                         "-num_threads",
                         proc,
                         "-out",
@@ -50,15 +50,21 @@ def main():
     True , nargs = '+', help = 'Provide databases to make queries')
     parser.add_argument('-t', '--threads', dest='threads', default='1',
                         help='Provide the number of threads to use')
+    parser.add_argument('-e', '--evalue', dest='evalue', default='1',
+                        help='Provide the evalue to use')
+    parser.add_argument('-of', '--outfmt', dest='outfmt', default='1',
+                        help='Provide the evalue to use')
 
     args = parser.parse_args()
 
     dbs = args.database
     query_search = args.query
     proc = args.threads
+    evalue = args.evalue
+    outformat = args.outfmt
 
     for search in query_search:
-        blast(search, dbs, proc)
+        blast(search, dbs, proc, evalue, outformat)
 
 if __name__ == "__main__":
     main()
