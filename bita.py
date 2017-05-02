@@ -53,7 +53,7 @@ def main():
     parser.add_argument('-e', '--evalue', dest='evalue', default='1',
                         help='Provide the evalue to use')
     parser.add_argument('-of', '--outfmt', dest='outfmt', default='1',
-                        help='Provide the evalue to use')
+                        help='Provide the outpoutput format type')
 
     args = parser.parse_args()
 

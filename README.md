@@ -14,4 +14,8 @@ bita.py allows to blast mixed queries of proteins (tblastn) and nucleotides (bla
 -d; --database - Provide databases to make queries
 
 -t; --threads - Provide the number of threads to use
+
+-e; --evalue - Provide the evalue to use
+
+-of; --outfmt - Provide the output format type you want. For further information read blast+ documentation.
 ```
