@@ -18,4 +18,6 @@ bita.py allows to blast mixed queries of proteins (tblastn) and nucleotides (bla
 -e; --evalue - Provide the evalue to use
 
 -of; --outfmt - Provide the output format type you want. For further information read blast+ documentation.
+
+-st; --sequence_type - Indicate the sequence type. Options must be nucl or prot for nucleotide and protein queries, respectively.
 ```
